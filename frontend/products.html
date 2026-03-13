@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadProducts()">
+
+<h2>Available Products</h2>
+
+<button onclick="loadProducts()">Refresh Products</button>
+
+<br><br>
+
+
+
+<input type="text"
+       placeholder="Search products..."
+       onkeyup="searchProducts(this.value)">
+
+<br><br>
+
+
+
+<select onchange="filterProducts(this.value)">
+    <option value="all">All</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Appliances">Appliances</option>
+</select>
+
+<br><br>
+
+
+
+<div id="productList"></div>
+
+
+
+<div id="productPopup"
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; justify-content:center; align-items:center;">
+
+    <div style="background:white; padding:20px; border-radius:10px; text-align:center;">
+
+        <h2 id="popupName"></h2>
+
+        <img id="popupImage" width="400">
+
+        <p id="popupCategory"></p>
+
+        <p id="popupRent"></p>
+
+        <p id="popupCity"></p>
+
+        <button onclick="closePopup()">Close</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
