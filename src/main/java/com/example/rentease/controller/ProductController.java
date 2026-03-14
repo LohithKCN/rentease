@@ -11,7 +11,10 @@ import java.util.List;
 @RequestMapping("/api/products")
 @CrossOrigin(origins = "*")
 public class ProductController {
-
+    @GetMapping
+    public String testProducts() {
+        return "Products API working 🚀";
+    }
     @Autowired
     private ProductService productService;
 
