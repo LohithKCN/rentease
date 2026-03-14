@@ -15,6 +15,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping
+    public String testUsers() {
+        return "Users API working 🚀";
+    }
+
     @PostMapping("/register")
     public User registerUser(@RequestBody User user){
         return userService.registerUser(user);
